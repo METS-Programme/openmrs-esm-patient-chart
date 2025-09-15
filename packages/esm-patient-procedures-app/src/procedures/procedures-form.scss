@@ -1,0 +1,22 @@
+@use '@carbon/colors';
+@use '@carbon/layout';
+@use '@carbon/type';
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
+.button {
+  height: layout.$spacing-10;
+  display: flex;
+  align-content: flex-start;
+  align-items: baseline;
+  min-width: 50%;
+}
+
+.errorContainer {
+  margin: layout.$spacing-05;
+}
+
+.errorMessage {
+  @include type.type-style('label-02');
+  color: $danger;
+  margin-top: layout.$spacing-03;
+}

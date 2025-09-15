@@ -37,7 +37,14 @@
     }
   ],
   "pages": [],
-  "workspaces": [],
+  "workspaces": [
+    {
+      "name": "procedures-form-workspace",
+      "title": "recordProcedureHistory",
+    "component": "proceduresFormWorkspace" ,
+    "type": "form"   
+  }
+  ],
   "modals": []
 }
 

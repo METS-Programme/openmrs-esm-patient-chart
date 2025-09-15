@@ -1,5 +1,6 @@
+import { launchWorkspace } from '@openmrs/esm-framework';
 import { EmptyState } from '@openmrs/esm-patient-common-lib';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export interface ProceduresOverviewProps {
@@ -13,7 +14,15 @@ const ProceduresOverview: React.FC<ProceduresOverviewProps> = ({ patient, patien
   const displayText = t('procedures__lower', 'procedures');
   const headerTitle = t('procedures', 'Procedures');
 
-  return <EmptyState displayText={displayText} headerTitle={headerTitle} />;
+  const launchProceduresForm = useCallback(
+    () =>
+      launchWorkspace('procedures-form-workspace', {
+        formContext: 'creating',
+      }),
+    [],
+  );
+
+  return <EmptyState displayText={displayText} headerTitle={headerTitle} launchForm={launchProceduresForm} />;
 };
 
 export default ProceduresOverview;
